@@ -59,7 +59,7 @@ geraDados();
 function startContador() {
 
     min1 = 24;
-    seg1 = 25;
+    seg1 = 59;
 
 
     displayMinutes.innerHTML = min1;
@@ -72,9 +72,9 @@ function startContador() {
 
     //Função responsável por deduzir os minutos
     function timerContadorMinutes() {
-
-        displayMinutes.innerHTML = min1;
         min1--;
+        displayMinutes.innerHTML = min1;
+
 
     }
 
