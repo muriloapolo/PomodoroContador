@@ -59,7 +59,7 @@ geraDados();
 function startContador() {
 
     min1 = 24;
-    seg1 = 59;
+    seg1 = 25;
 
 
     displayMinutes.innerHTML = min1;
@@ -72,9 +72,9 @@ function startContador() {
 
     //Função responsável por deduzir os minutos
     function timerContadorMinutes() {
-        min1--;
-        displayMinutes.innerHTML = min1;
 
+        displayMinutes.innerHTML = min1;
+        min1--;
 
     }
 
@@ -84,9 +84,11 @@ function startContador() {
         seg1--;
         displaySeconds.innerHTML = seg1;
 
+
         if (seg1 <= 0) {
 
             if (min1 <= 0) {
+                min1 = 0;
                 clearInterval(minutesInterval);
                 clearInterval(secondsInterval);
                 displayMinutes.innerHTML = '0' + min1;
@@ -94,14 +96,11 @@ function startContador() {
                 fimContador.play();
                 btnPlay.style.pointerEvents = 'auto';
             }
-
             seg1 = 60;
-
         }
-
     }
 }
-
+//Reseta o contador e devolve ao botão sua propriedade.
 function resetContador() {
     clearInterval(minutesInterval);
     clearInterval(secondsInterval);
